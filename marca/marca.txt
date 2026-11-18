@@ -1,0 +1,8 @@
+# Marca del Concejo Deliberante de Paraná.
+# Para aplicarla, copiar esta carpeta junto al programa con el nombre "marca".
+nombre = Concejo Deliberante de Paraná
+# Azul del isologotipo oficial (hcdparana.gob.ar/recursos-para-medios).
+primario = #203961
+# Celeste de acento. Provisorio: el sitio no publica un valor oficial.
+acento = #299DBE
+logo = logo.png
