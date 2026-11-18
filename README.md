@@ -1,28 +1,37 @@
 # Armador de PDF · Concejo Deliberante de Paraná
 
-Versión del [Armador de PDF](https://github.com/pablo2h/armador-pdf) con la marca del Concejo Deliberante de Paraná aplicada. Repositorio privado de Horno de Barro.
+Programa para juntar varios documentos (por ejemplo, una nota y un proyecto) en un solo PDF. Esta es la versión con la identidad del Concejo Deliberante de Paraná.
 
 ## Descargar
 
-Los paquetes listos para entregar están en [Releases](../../releases/latest):
+| Sistema | Archivo |
+|---|---|
+| **Windows** | [ArmadorPDF-Windows.zip](https://github.com/pablo2h/armador-pdf-hcd-parana/releases/latest/download/ArmadorPDF-Windows.zip) (250 MB) |
+| **Linux** | [ArmadorPDF-Linux.tar.xz](https://github.com/pablo2h/armador-pdf-hcd-parana/releases/latest/download/ArmadorPDF-Linux.tar.xz) (173 MB) |
 
-- **Windows**: `ArmadorPDF-Windows.zip`. Descomprimir y abrir `Armador de PDF.exe`.
-- **Linux**: `ArmadorPDF-Linux.tar.xz`. Descomprimir y abrir `armador-pdf`.
+No hace falta tener cuenta ni instalar nada.
 
-Como este repositorio es privado, solo pueden descargar quienes tengan acceso. Para entregarlo a la oficina, bajar el paquete y compartirlo por otro medio (Drive, pendrive).
+## Cómo abrirlo en Windows
 
-## Qué hay acá
+1. Descargá `ArmadorPDF-Windows.zip`.
+2. Hacé clic derecho sobre el archivo → **Extraer todo…** y elegí dónde dejar la carpeta (Escritorio o Documentos).
+3. Entrá a la carpeta `ArmadorPDF-Windows` y abrí **Armador de PDF**.
+4. Si Windows muestra el aviso «Windows protegió su PC», tocá **Más información** y después **Ejecutar de todas formas**. Aparece porque el programa todavía no tiene firma digital.
 
-La carpeta `marca/` es el paquete de marca: es lo único que cambia respecto de la versión pública.
+No saques el programa de su carpeta: necesita la carpeta `libreoffice` que está al lado.
 
-| Clave | Valor | Origen |
-|---|---|---|
-| `primario` | `#203961` | Azul del isologotipo oficial y del sitio hcdparana.gob.ar |
-| `acento` | `#299DBE` | Celeste. Provisorio: el sitio no publica un valor oficial |
-| `logo` | `logo.png` | Isologotipo horizontal azul, de los recursos para medios del Concejo |
+## Cómo se usa
 
-## Cómo se arma un paquete
+1. **Agregá los documentos**: con el botón **Agregar documento** o arrastrándolos a la ventana. Sirven PDF y Word.
+2. **Revisá el orden**: movelos con las flechas o arrastrándolos. A la derecha se ve cómo queda el PDF.
+3. **Guardá el PDF final**: escribí el nombre y tocá **Guardar PDF**.
 
-1. Bajar el paquete neutro de la versión pública.
-2. Copiar la carpeta `marca/` de este repositorio dentro de la carpeta del programa, junto al ejecutable.
-3. Volver a comprimir.
+Dentro del programa, la pestaña **Cómo se usa** tiene el instructivo completo. Los documentos originales nunca se modifican.
+
+## Si algo no anda
+
+Anotá el mensaje que aparece en pantalla y qué estabas haciendo, y avisá a quien te pasó este enlace.
+
+---
+
+Desarrollado por Horno de Barro. El programa es software libre: el código está en [pablo2h/armador-pdf](https://github.com/pablo2h/armador-pdf). Este repositorio contiene solo la carpeta `marca/`, con los colores y el isologotipo del Concejo, que pertenece a esa institución.
