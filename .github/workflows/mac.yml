@@ -1,0 +1,61 @@
+name: Paquete para macOS con la marca
+
+# Toma el paquete genérico de pablo2h/armador-pdf, le agrega la carpeta marca/ y lo sube acá.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Versión (la misma etiqueta en los dos repositorios)"
+        required: true
+        default: "v0.6.0"
+
+permissions:
+  contents: write
+
+jobs:
+  paquete:
+    name: ${{ matrix.sufijo }}
+    runs-on: ${{ matrix.sistema }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - sufijo: AppleSilicon
+            sistema: macos-latest
+          - sufijo: Intel
+            sistema: macos-15-intel
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar el paquete genérico
+        run: gh release download "${{ inputs.version }}" -R pablo2h/armador-pdf -p "ArmadorPDF-macOS-${{ matrix.sufijo }}.zip"
+
+      - name: Aplicar la marca
+        run: |
+          ditto -x -k "ArmadorPDF-macOS-${{ matrix.sufijo }}.zip" paquete
+          rm "ArmadorPDF-macOS-${{ matrix.sufijo }}.zip"
+          app="paquete/ArmadorPDF-macOS/Armador de PDF.app"
+          cp -R marca "$app/Contents/Resources/marca"
+          xattr -cr paquete
+          codesign --force --sign - "$app"
+          codesign --verify --strict "$app"
+          ditto -c -k --keepParent paquete/ArmadorPDF-macOS "ArmadorPDF-macOS-${{ matrix.sufijo }}.zip"
+          ls -l "ArmadorPDF-macOS-${{ matrix.sufijo }}.zip"
+
+      - name: Captura de la ventana con la marca
+        continue-on-error: true
+        run: |
+          ARMADOR_CAPTURA=captura.ppm ARMADOR_DEMO=inicio \
+            perl -e 'alarm 90; exec @ARGV' "paquete/ArmadorPDF-macOS/Armador de PDF.app/Contents/MacOS/armador-pdf"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: captura-${{ matrix.sufijo }}
+          path: captura.ppm
+          if-no-files-found: ignore
+
+      - name: Subir a la versión publicada
+        run: gh release upload "${{ inputs.version }}" "ArmadorPDF-macOS-${{ matrix.sufijo }}.zip" --clobber
