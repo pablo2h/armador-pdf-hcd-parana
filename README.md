@@ -8,6 +8,8 @@ Programa para juntar varios documentos (por ejemplo, una nota y un proyecto) en 
 |---|---|
 | **Windows** | [ArmadorPDF-Windows.zip](https://github.com/pablo2h/armador-pdf-hcd-parana/releases/latest/download/ArmadorPDF-Windows.zip) (250 MB) |
 | **Linux** | [ArmadorPDF-Linux.tar.xz](https://github.com/pablo2h/armador-pdf-hcd-parana/releases/latest/download/ArmadorPDF-Linux.tar.xz) (173 MB) |
+| **Mac** con chip Apple (M1 en adelante) | [ArmadorPDF-macOS-AppleSilicon.zip](https://github.com/pablo2h/armador-pdf-hcd-parana/releases/latest/download/ArmadorPDF-macOS-AppleSilicon.zip) |
+| **Mac** con procesador Intel | [ArmadorPDF-macOS-Intel.zip](https://github.com/pablo2h/armador-pdf-hcd-parana/releases/latest/download/ArmadorPDF-macOS-Intel.zip) |
 
 No hace falta tener cuenta ni instalar nada.
 
@@ -19,6 +21,14 @@ No hace falta tener cuenta ni instalar nada.
 4. Si Windows muestra el aviso «Windows protegió su PC», tocá **Más información** y después **Ejecutar de todas formas**. Aparece porque el programa todavía no tiene firma digital.
 
 No saques el programa de su carpeta: necesita la carpeta `libreoffice` que está al lado.
+
+## Cómo abrirlo en Mac
+
+1. Fijate qué Mac tenés: menú  → **Acerca de esta Mac**. Si dice «Chip Apple M…», descargá el de chip Apple; si dice «Procesador Intel», el de Intel.
+2. Abrí el archivo descargado: aparece la carpeta `ArmadorPDF-macOS` con el programa **Armador de PDF** adentro. Podés arrastrarlo a Aplicaciones.
+3. Abrilo. La primera vez macOS avisa que no puede verificar el programa, porque todavía no tiene firma de Apple. Tocá **Listo**, abrí **Ajustes del Sistema → Privacidad y seguridad**, bajá hasta el final y tocá **Abrir igualmente**. Se hace una sola vez.
+
+Los PDF se proponen guardar en **Documentos → Armador de PDF**; al guardar se puede elegir otra carpeta.
 
 ## Cómo se usa
 
